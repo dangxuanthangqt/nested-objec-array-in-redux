@@ -1,0 +1,25 @@
+ta có cấu trúc 
+state :{
+    a: 1,
+    listResevation: [{
+        a:1,
+        b:1,
+        item:{
+        a:1,
+        status: unpaid // thay doi status
+        }
+    }]
+}
+
+handle : 
+const tempArray = [...state.listReservation];
+const temp1 = {...tempArray[0],
+                item : {...tempArray[0].item
+                status:"paid"
+                }
+tempArray.splice(0, 1, temp1);
+
+return {
+...state,
+listReservation:[...state.listReservation]
+}
